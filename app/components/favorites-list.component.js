@@ -10,19 +10,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = "Favorites URL App!";
-        this.description = "SPA web app with Angular2 to manage favorite urls";
+var FavoritesListComponent = (function () {
+    function FavoritesListComponent() {
+        this.title = 'Markers List:';
     }
-    AppComponent = __decorate([
+    FavoritesListComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            templateUrl: 'app/views/home.html'
+            selector: 'favorites-list',
+            templateUrl: 'app/views/favorites-list.html'
         }),
         __metadata("design:paramtypes", [])
-    ], AppComponent);
-    return AppComponent;
+    ], FavoritesListComponent);
+    return FavoritesListComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.FavoritesListComponent = FavoritesListComponent;
+//# sourceMappingURL=favorites-list.component.js.map

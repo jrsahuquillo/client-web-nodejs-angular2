@@ -1,0 +1,60 @@
+body {
+    font-family: Helvetica, Arial;
+}
+
+.clearfix{
+    float: none;
+    clear: both;
+    text-decoration: none;
+    list-style: none
+}
+
+#content{
+    width: 80%;
+    min-height: 500px;
+    margin: 0 auto;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #ddd;
+    background: #eee;
+}
+
+header {
+    padding: 15px;
+    background: #229138;
+}
+
+header .title-subtitle {
+    float: left;
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    color: white;
+    padding: 20px;
+    margin-left: -65px;
+    padding-left: 65px;
+}
+
+header h1, header p{
+    margin: 0px;
+    margin-left: 15px;
+
+}
+
+header p{
+    color: #ddd;
+}
+
+header #logo{
+    width: 65px;
+    display: block;
+    float: left;
+    margin-top: 10px;
+}
+
+footer{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 20px;
+    color: gray;
+}
