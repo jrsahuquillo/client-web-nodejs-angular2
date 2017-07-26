@@ -1,1 +1,7 @@
 <strong>{{title}}</strong>
+
+<ul id="favorites-list">
+  <li *ngFor="let favorite of favorites" class="favorite-item">
+    <h4>{{favorite.title}}</h4>
+  </li>
+</ul>

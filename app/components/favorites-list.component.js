@@ -10,16 +10,36 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var favorite_service_1 = require("../services/favorite.service");
 var FavoritesListComponent = (function () {
-    function FavoritesListComponent() {
+    function FavoritesListComponent(_favoriteService) {
+        this._favoriteService = _favoriteService;
         this.title = 'Markers List:';
     }
+    FavoritesListComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        console.log('FavoritesListComponent loaded!!');
+        this._favoriteService.getFavorites().subscribe(function (result) {
+            console.log(result);
+            _this.favorites = result.favorites;
+            if (!_this.favorites) {
+                alert('Server Error');
+            }
+        }, function (error) {
+            _this.errorMessage = error;
+            if (_this.errorMessage != null) {
+                console.log(_this.errorMessage);
+                alert('Request Error!');
+            }
+        });
+    };
     FavoritesListComponent = __decorate([
         core_1.Component({
             selector: 'favorites-list',
-            templateUrl: 'app/views/favorites-list.html'
+            templateUrl: 'app/views/favorites-list.html',
+            providers: [favorite_service_1.FavoriteService]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [favorite_service_1.FavoriteService])
     ], FavoritesListComponent);
     return FavoritesListComponent;
 }());
