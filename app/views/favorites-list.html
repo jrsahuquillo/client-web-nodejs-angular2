@@ -1,7 +1,22 @@
-<strong>{{title}}</strong>
-
 <ul id="favorites-list">
   <li *ngFor="let favorite of favorites" class="favorite-item">
-    <h4>{{favorite.title}}</h4>
+    <div class="content-data">
+      <h4>{{favorite.title}}</h4>
+      <p class="url">{{favorite.url}}</p>
+      <p class="buttons">
+        <a href="{{favorite.url}}" target="_blank" class="btn btn-default">
+          Go to marker
+        </a>
+        <a href="{{favorite.url}}" target="_blank" class="btn btn-see">
+          See
+        </a>
+        <a href="{{favorite.url}}" target="_blank" class="btn btn-edit">
+          Edit
+        </a>
+        <a href="{{favorite.url}}" target="_blank" class="btn btn-delete">
+          Delete
+        </a>
+    </p>
+    </div>
   </li>
 </ul>

@@ -6,7 +6,7 @@ body {
     float: none;
     clear: both;
     text-decoration: none;
-    list-style: none
+    list-style: none;
 }
 
 #content{
@@ -20,12 +20,12 @@ body {
     background: #eee;
 }
 
-header {
+header{
     padding: 15px;
     background: #229138;
 }
 
-header .title-subtitle {
+header .title-subtitle{
     float: left;
     border-bottom: 1px solid white;
     border-top: 1px solid white;
@@ -50,6 +50,75 @@ header #logo{
     display: block;
     float: left;
     margin-top: 10px;
+}
+
+#favorites-list{
+    padding: 0px;
+    margin: 0px;
+}
+
+.favorite-item{
+    list-style: none;
+    border: 1px solid #ddd;
+    float: left;
+    width: 31%;
+    height: 120px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: gray;
+    background: white;
+    margin: 10px;
+}
+
+.favorite-item .content-data{
+    float: left;
+    margin-left: 20px;
+}
+
+.favorite-item h4{
+    color: #444;
+    margin: 0px;
+    padding: 0px;
+    margin-top: 5px;
+}
+
+.favorite-item .url{
+    color: #444;
+    margin: 0px;
+    margin-top: 2px;
+    padding: 0px;
+    height: 45px;
+    overflow: hidden;
+}
+
+.btn{
+    font-size: 13px;
+    border: 1px solid #ccc;
+    border-color: #1976D2;
+    border-radius: 4px;
+    box-shadow: 0px 0px 5px #ddd;
+    padding: 5px;
+    text-decoration: none;
+    color: white;
+    background: #0074d9;
+    cursor: pointer;
+    margin-left: 5px;
+}
+.btn-edit{
+    background: #0A0;
+    border-color: #59a600;
+}
+
+.btn-delete{
+    background: #E23237;
+    border-color: #F54747;
+}
+
+.btn-default{
+    background: #EAA615;
+    border-color: #CC941C;
+    color: white;
+    margin-left: 0px;
 }
 
 footer{
