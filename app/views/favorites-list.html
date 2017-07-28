@@ -1,4 +1,9 @@
-<ul id="favorites-list">
+<div class="loading" *ngIf="loading">
+  <img src="../../assets/images/loader.gif" />
+
+</div>
+
+<ul id="favorites-list" *ngIf="favorites">
   <li *ngFor="let favorite of favorites" class="favorite-item">
     <div class="content-data">
       <h4>{{favorite.title}}</h4>

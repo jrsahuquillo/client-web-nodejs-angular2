@@ -132,6 +132,10 @@ header #logo{
     padding-bottom: 20px;
 }
 
+.loading{
+    margin: 25px;
+}
+
 footer{
     width: 80%;
     margin: 0 auto;

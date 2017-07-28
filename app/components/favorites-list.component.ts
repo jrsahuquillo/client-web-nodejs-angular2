@@ -13,6 +13,8 @@ import { Favorite } from '../models/favorite';
 
 export class FavoritesListComponent implements OnInit{
   public title: string;
+  public loading: boolean;
+
   public favorites: Favorite[];
   public errorMessage;
 
@@ -20,6 +22,7 @@ export class FavoritesListComponent implements OnInit{
     private _favoriteService: FavoriteService
   ){
     this.title = 'Markers List:';
+    this.loading = true;
   }
 
   ngOnInit(){
@@ -31,6 +34,8 @@ export class FavoritesListComponent implements OnInit{
 
         if(!this.favorites){
           alert('Server Error');
+        }else{
+          this.loading = false;
         }
       },
       error => {
