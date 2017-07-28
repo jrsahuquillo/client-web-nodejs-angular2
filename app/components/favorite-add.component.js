@@ -10,15 +10,48 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
+var favorite_service_1 = require("../services/favorite.service");
+var favorite_1 = require("../models/favorite");
 var FavoriteAddComponent = (function () {
-    function FavoriteAddComponent() {
+    function FavoriteAddComponent(_favoriteService, _route, _router) {
+        this._favoriteService = _favoriteService;
+        this._route = _route;
+        this._router = _router;
+        this.titleSection = "Create new favorite";
     }
+    FavoriteAddComponent.prototype.ngOnInit = function () {
+        this.favorite = new favorite_1.Favorite("", "", "", "");
+        console.log(this.favorite);
+    };
+    FavoriteAddComponent.prototype.onSubmit = function () {
+        var _this = this;
+        console.log(this.favorite);
+        this._favoriteService.addFavorite(this.favorite).subscribe(function (response) {
+            if (!_this.favorite) {
+                alert('Server error');
+            }
+            else {
+                _this.favorite = response.favorite;
+                _this._router.navigate(['/marker', _this.favorite._id]);
+            }
+        }, function (error) {
+            _this.errorMessage = error;
+            if (_this.errorMessage != null) {
+                console.log(_this.errorMessage);
+                alert('Request Error!');
+            }
+        });
+    };
     FavoriteAddComponent = __decorate([
         core_1.Component({
             selector: 'favorite-add',
-            templateUrl: 'app/views/favorite-add.html'
+            templateUrl: 'app/views/favorite-add.html',
+            providers: [favorite_service_1.FavoriteService]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [favorite_service_1.FavoriteService,
+            router_1.ActivatedRoute,
+            router_1.Router])
     ], FavoriteAddComponent);
     return FavoriteAddComponent;
 }());

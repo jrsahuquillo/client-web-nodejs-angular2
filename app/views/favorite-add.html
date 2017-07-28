@@ -1,1 +1,25 @@
-<h1>Favorite Add</h1>
+<div class="favorite-box" *ngIf="favorite">
+  <h1>{{titleSection}}</h1>
+
+  <form #formFavorite="ngForm" (ngSubmit)="onSubmit()">
+    <label>Title:</label>
+    <p>
+      <input type="text" name="title" #title="ngModel" [(ngModel)]="favorite.title" required/>
+      <span *ngIf="title.touched && !title.valid">Title error!</span>
+    </p>
+
+    <label>Description:</label>
+    <p>
+      <textarea name="description" #description="ngModel" [(ngModel)]="favorite.description" required></textarea>
+      <span *ngIf="description.touched && !description.valid">Description error!</span>
+    </p>
+
+    <label>URL:</label>
+    <p>
+      <input type="text" name="url" #url="ngModel" [(ngModel)]="favorite.url" required/>
+      <span *ngIf="url.touched && !url.valid">URL error!</span>
+    </p>
+
+    <input type="submit" value="{{titleSection}}">
+  </form>
+</div>
