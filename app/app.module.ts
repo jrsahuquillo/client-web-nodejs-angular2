@@ -7,6 +7,7 @@ import { routing, appRoutingProviders } from './app.routing';
 import { AppComponent }  from './app.component';
 import { FavoritesListComponent } from './components/favorites-list.component';
 import { FavoriteDetailComponent } from './components/favorite-detail.component';
+import { FavoriteAddComponent } from './components/favorite-add.component';
 
 @NgModule({
   imports:      [
@@ -18,7 +19,8 @@ import { FavoriteDetailComponent } from './components/favorite-detail.component'
   declarations: [
                 AppComponent,
                 FavoritesListComponent,
-                FavoriteDetailComponent
+                FavoriteDetailComponent,
+                FavoriteAddComponent
   ],
   providers: [ appRoutingProviders ],
   bootstrap: [ AppComponent ]

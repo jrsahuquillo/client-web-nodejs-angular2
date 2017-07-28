@@ -14,6 +14,7 @@ var app_routing_1 = require("./app.routing");
 var app_component_1 = require("./app.component");
 var favorites_list_component_1 = require("./components/favorites-list.component");
 var favorite_detail_component_1 = require("./components/favorite-detail.component");
+var favorite_add_component_1 = require("./components/favorite-add.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -28,7 +29,8 @@ var AppModule = (function () {
             declarations: [
                 app_component_1.AppComponent,
                 favorites_list_component_1.FavoritesListComponent,
-                favorite_detail_component_1.FavoriteDetailComponent
+                favorite_detail_component_1.FavoriteDetailComponent,
+                favorite_add_component_1.FavoriteAddComponent
             ],
             providers: [app_routing_1.appRoutingProviders],
             bootstrap: [app_component_1.AppComponent]
