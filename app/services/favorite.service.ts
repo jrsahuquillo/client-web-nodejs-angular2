@@ -30,4 +30,13 @@ export class FavoriteService{
     return this._http.post(this.url + 'favorite', params, {headers: headers})
                       .map(res => res.json());
   }
+
+  editFavorite(id: string, favorite: Favorite){
+    let json = JSON.stringify(favorite);
+    let params = json;
+    let headers = new Headers({'Content-Type':'application/json'});
+
+    return this._http.put(this.url + 'favorite/' + id, params, {headers: headers})
+                      .map(res => res.json());
+  }
 }

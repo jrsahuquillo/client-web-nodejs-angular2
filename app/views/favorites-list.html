@@ -15,7 +15,7 @@
         <a [routerLink]="['/marker', favorite._id]" class="btn btn-see">
           See
         </a>
-        <a href="{{favorite.url}}" target="_blank" class="btn btn-edit">
+        <a [routerLink]="['/edit-marker', favorite._id]" class="btn btn-edit">
           Edit
         </a>
         <a href="{{favorite.url}}" target="_blank" class="btn btn-delete">

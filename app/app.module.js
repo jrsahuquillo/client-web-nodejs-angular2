@@ -15,6 +15,7 @@ var app_component_1 = require("./app.component");
 var favorites_list_component_1 = require("./components/favorites-list.component");
 var favorite_detail_component_1 = require("./components/favorite-detail.component");
 var favorite_add_component_1 = require("./components/favorite-add.component");
+var favorite_edit_component_1 = require("./components/favorite-edit.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -30,7 +31,8 @@ var AppModule = (function () {
                 app_component_1.AppComponent,
                 favorites_list_component_1.FavoritesListComponent,
                 favorite_detail_component_1.FavoriteDetailComponent,
-                favorite_add_component_1.FavoriteAddComponent
+                favorite_add_component_1.FavoriteAddComponent,
+                favorite_edit_component_1.FavoriteEditComponent
             ],
             providers: [app_routing_1.appRoutingProviders],
             bootstrap: [app_component_1.AppComponent]

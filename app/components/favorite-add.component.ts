@@ -16,8 +16,8 @@ export class FavoriteAddComponent implements OnInit{
   public errorMessage: any;
 
   constructor(
-    private _favoriteService:FavoriteService,
-    private _route:ActivatedRoute,
+    private _favoriteService: FavoriteService,
+    private _route: ActivatedRoute,
     private _router: Router
   ){
     this.titleSection = "Create new favorite"
