@@ -18,10 +18,21 @@
         <a [routerLink]="['/edit-marker', favorite._id]" class="btn btn-edit">
           Edit
         </a>
-        <a href="{{favorite.url}}" target="_blank" class="btn btn-delete">
+        <a (click)="onDeleteConfirm(favorite._id)" class="btn btn-delete">
           Delete
         </a>
-    </p>
+      </p>
+      <div class="sure" *ngIf="confirm == favorite._id">
+        <p>
+          <strong>¿Are you sure?</strong>
+        </p>
+        <a (click)="onDeleteFavorite(favorite._id)" class="btn btn-delete">
+          Delete
+        </a>
+        <a (click)="onCancelConfirm(favorite._id)" class="btn btn-ver">
+          Cancel
+        </a>
+      </div>
     </div>
   </li>
 </ul>

@@ -162,3 +162,11 @@ footer{
     margin-top: 20px;
     color: gray;
 }
+
+.sure{
+    position: absolute;
+    margin-top: -70px;
+    background: white;
+    width: 275px;
+    text-align: center;
+}

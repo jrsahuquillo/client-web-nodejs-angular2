@@ -18,6 +18,8 @@ export class FavoritesListComponent implements OnInit{
   public favorites: Favorite[];
   public errorMessage;
 
+  public confirm;
+
   constructor(
     private _favoriteService: FavoriteService
   ){
@@ -27,6 +29,10 @@ export class FavoritesListComponent implements OnInit{
 
   ngOnInit(){
     console.log('FavoritesListComponent loaded!!');
+    this.getFavorites();
+  }
+
+  getFavorites(){
     this._favoriteService.getFavorites().subscribe(
       result => {
         console.log(result);
@@ -46,6 +52,32 @@ export class FavoritesListComponent implements OnInit{
         }
       }
     );
+  }
+
+  onDeleteConfirm(id){
+    this.confirm = id;
+  }
+
+  onCancelConfirm(id){
+    this.confirm = null;
+  }
+
+  onDeleteFavorite(id){
+    this._favoriteService.deleteFavorite(id).subscribe(
+      result => {
+        if(!result.message){
+          alert('Request Error')
+        }
+        this.getFavorites();
+      },
+      error => {
+        this.errorMessage = <any>error;
+        if(this.errorMessage != null){
+          console.log(this.errorMessage);
+          alert('Request Error!');
+        }
+      }
+    )
   }
 
 }

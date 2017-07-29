@@ -18,8 +18,11 @@ var FavoritesListComponent = (function () {
         this.loading = true;
     }
     FavoritesListComponent.prototype.ngOnInit = function () {
-        var _this = this;
         console.log('FavoritesListComponent loaded!!');
+        this.getFavorites();
+    };
+    FavoritesListComponent.prototype.getFavorites = function () {
+        var _this = this;
         this._favoriteService.getFavorites().subscribe(function (result) {
             console.log(result);
             _this.favorites = result.favorites;
@@ -29,6 +32,27 @@ var FavoritesListComponent = (function () {
             else {
                 _this.loading = false;
             }
+        }, function (error) {
+            _this.errorMessage = error;
+            if (_this.errorMessage != null) {
+                console.log(_this.errorMessage);
+                alert('Request Error!');
+            }
+        });
+    };
+    FavoritesListComponent.prototype.onDeleteConfirm = function (id) {
+        this.confirm = id;
+    };
+    FavoritesListComponent.prototype.onCancelConfirm = function (id) {
+        this.confirm = null;
+    };
+    FavoritesListComponent.prototype.onDeleteFavorite = function (id) {
+        var _this = this;
+        this._favoriteService.deleteFavorite(id).subscribe(function (result) {
+            if (!result.message) {
+                alert('Request Error');
+            }
+            _this.getFavorites();
         }, function (error) {
             _this.errorMessage = error;
             if (_this.errorMessage != null) {

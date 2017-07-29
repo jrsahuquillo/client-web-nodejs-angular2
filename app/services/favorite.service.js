@@ -39,6 +39,10 @@ var FavoriteService = (function () {
         return this._http.put(this.url + 'favorite/' + id, params, { headers: headers })
             .map(function (res) { return res.json(); });
     };
+    FavoriteService.prototype.deleteFavorite = function (id) {
+        return this._http.delete(this.url + 'favorite/' + id)
+            .map(function (res) { return res.json(); });
+    };
     FavoriteService = __decorate([
         core_1.Injectable(),
         __metadata("design:paramtypes", [http_1.Http])
